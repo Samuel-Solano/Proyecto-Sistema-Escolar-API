@@ -60,3 +60,21 @@ class Maestros(models.Model):
 
     def __str__(self):
         return "Perfil del maestro "+self.first_name+" "+self.last_name
+
+class Eventos(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    nombre_evento = models.CharField(max_length=255)
+    tipo_evento = models.CharField(max_length=50)
+    fecha = models.DateField()
+    hora_inicio = models.TimeField()
+    hora_fin = models.TimeField()
+    lugar = models.CharField(max_length=255)
+    publico_objetivo = models.TextField(max_length=255) 
+    programa_educativo = models.TextField(max_length=255, blank=True, null=True)
+    responsable = models.ForeignKey(User, on_delete=models.CASCADE)
+    descripcion = models.TextField(max_length=300)
+    cupo = models.PositiveIntegerField()
+
+
+    def __str__(self):
+        return "Evento creado"+self.nombre_evento

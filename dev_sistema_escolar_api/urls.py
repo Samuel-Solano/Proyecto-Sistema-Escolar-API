@@ -8,6 +8,7 @@ from dev_sistema_escolar_api.views import users
 from dev_sistema_escolar_api.views import alumnos
 from dev_sistema_escolar_api.views import maestros
 from dev_sistema_escolar_api.views import auth
+from dev_sistema_escolar_api.views import eventos
 
 urlpatterns = [
    #Create Admin
@@ -29,7 +30,15 @@ urlpatterns = [
     #Login
         path('login/', auth.CustomAuthToken.as_view()),
     #Logout
-        path('logout/', auth.Logout.as_view())
+        path('logout/', auth.Logout.as_view()),
+    #Crear evento
+        path('eventos-academicos/', eventos.EventosView.as_view()),
+    #Lista de eventos
+        path('total-eventos/', eventos.EventosAll.as_view()),
+    #Editar
+        path('eventos-academicos', eventos.EventosView.as_view()),
+    #Total de Eventos
+        path('eventos-totales/', eventos.TotalEventos.as_view())
 ]
 
 if settings.DEBUG:
