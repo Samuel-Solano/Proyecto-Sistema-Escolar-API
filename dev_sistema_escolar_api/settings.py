@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '-_&+lsebec(whhw!%n@ww&1j=4-^j_if9x8$q
 
 # DEBUG:
 
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 # HOSTS:
 ALLOWED_HOSTS = ['*']
