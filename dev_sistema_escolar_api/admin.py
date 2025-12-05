@@ -3,10 +3,10 @@ from django.utils.html import format_html
 from dev_sistema_escolar_api.models import *
 
 
-@admin.register(Administradores)
-@admin.register(Alumnos)
-@admin.register(Maestros)
-@admin.register(Eventos)
+admin.site.register(Alumnos)
+admin.site.register(Maestros)
+admin.site.register(Administradores)
+admin.site.register(Eventos)
 
 class ProfilesAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "creation", "update")
